@@ -32,7 +32,6 @@ let adaptiv = confirm('Нужен ли адаптив на сайте?');
 let toIntermediary = (fullPrice) * (rollback / 100); 
 let servicePercentPrice = (fullPrice - toIntermediary);//% отката посреднику
 
-
 //Выводы в консоль и алерт
 console.log(typeof 'Calculator_JS');
 console.log(typeof 65431385797865445654n);
