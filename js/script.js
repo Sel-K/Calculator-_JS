@@ -4,8 +4,6 @@ let title = prompt('Как называется ваш проект?'); //ран
 let screens = prompt('Какие типы экранов нужно разработать?', 'Simple, Complex, Interactive');
 let screenPrice = +prompt('Сколько будет стоить данная работа?', '12000');
 let rollback = 77;
-let a = 'GitBash ';
-let b = 'is killing me!';
 
 
 // 7 пункт
@@ -19,7 +17,7 @@ let fullPrice = (screenPrice + servicePrice1 + servicePrice2);
 //10 пункт
 if (fullPrice > 30000) {
     console.log("Даем скидку в 10%");
-} else if (fullPrice == 30000 || fullPrice < 30000 && fullPrice > 15000) {
+} else if (fullPrice <= 30000 && fullPrice > 15000) {
     console.log('Даем скидку в 5%');
 } else if (fullPrice <= 15000 && fullPrice >= 0) {
     console.log('Скидка не предусмотрена');
@@ -31,8 +29,8 @@ if (fullPrice > 30000) {
 let adaptiv = confirm('Нужен ли адаптив на сайте?');
 
 // 9 пункт
-let toIntermediary = Number((fullPrice) * (rollback / 100)); //% отката посреднику
-let servicePercentPrice = (fullPrice - toIntermediary);
+let toIntermediary = (fullPrice) * (rollback / 100); 
+let servicePercentPrice = (fullPrice - toIntermediary);//% отката посреднику
 
 
 //Выводы в консоль и алерт
@@ -50,5 +48,3 @@ console.log(adaptiv);
 console.log(fullPrice); // 8 пункт
 console.log(Math.ceil(servicePercentPrice)); // 9 пункт
 console.log('Процент отката посреднику за работу ' + toIntermediary + ' рублей');
-console.log(a + b);
-alert('Hello, my JS!');
