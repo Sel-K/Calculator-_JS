@@ -35,16 +35,16 @@ function getFullPrice(a, b) {
 }
 
 
+
 function getServicePercentPrices(a, b) {
     return a - b;
 }
-toIntermediary = fullPrice * (rollback / 100);
+//toIntermediary = fullPrice * (rollback / 100);
 
 function getTitle(title) {
-    if (title) {
+    
         title = title.trim();
-        return title[0].toUpperCase() + title.slice(1);
-    } else return title;
+        return title[0].toUpperCase() + title.slice(1).toLowerCase();
 }
 
 
@@ -67,10 +67,11 @@ showTypeOff(screenPrice);
 showTypeOff(adaptiv);
 console.log(title = getTitle(title));
 console.log(screens.toLowerCase().split(' ')); //toLowerCase - все буквы в нижнем регистре, .split - разбивает на массив строку//
-console.log(getRollbackMessage(fullPrice));
 console.log(allServicePrices = getAllServicePrice(servicePrice1, servicePrice2));
 console.log(fullPrice = getFullPrice(screenPrice, allServicePrices));
-console.log(servicePercentPrice = getServicePercentPrices(fullPrice, toIntermediary));
+console.log(servicePercentPrice = getServicePercentPrices(fullPrice, toIntermediary = fullPrice * (rollback / 100)));
+console.log(getRollbackMessage(fullPrice));
+console.log(toIntermediary);
 
 
 
