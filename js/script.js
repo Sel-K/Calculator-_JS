@@ -72,20 +72,3 @@ console.log(fullPrice = getFullPrice(screenPrice, allServicePrices));
 console.log(servicePercentPrice = getServicePercentPrices(fullPrice, toIntermediary = fullPrice * (rollback / 100)));
 console.log(getRollbackMessage(fullPrice));
 console.log(toIntermediary);
-
-
-
-/*Удалить, больше не нужно
-
-console.log(toIntermediary);
-console.log(allServicePrices);
-console.log(typeof 'Calculator_JS');
-console.log(typeof 65431385797865445654n);
-console.log(typeof true);
-console.log(screens.length); //показывает длинну строки
-console.log('Стоимость вёрстки экранов ' + screenPrice + ' рублей/ долларов/гривен/юани');
-console.log('Стоимость разработки сайта ' + fullPrice + ' рублей/ долларов/гривен/юани');
-console.log(screens.toString());
-console.log(fullPrice); // 8 пункт
-console.log(Math.ceil(servicePercentPrice)); // 9 пункт
-console.log('Процент отката посреднику за работу ' + toIntermediary + ' рублей');*/
