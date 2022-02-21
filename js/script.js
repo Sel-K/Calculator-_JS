@@ -25,7 +25,7 @@ const showTypeOff = function (variable) {
 
 // к 4 уроку пункт 1
 
-const getAllServicePrice = function (a, b) {
+const getAllServicePrices = function (a, b) {
     return (a + b);
 }
 
@@ -67,7 +67,7 @@ showTypeOff(screenPrice);
 showTypeOff(adaptiv);
 console.log(title = getTitle(title));
 console.log(screens.toLowerCase().split(' ')); //toLowerCase - все буквы в нижнем регистре, .split - разбивает на массив строку//
-console.log(allServicePrices = getAllServicePrice(servicePrice1, servicePrice2));
+console.log(allServicePrices = getAllServicePrices(servicePrice1, servicePrice2));
 console.log(fullPrice = getFullPrice(screenPrice, allServicePrices));
 console.log(servicePercentPrice = getServicePercentPrices(fullPrice, toIntermediary = fullPrice * (rollback / 100)));
 console.log(getRollbackMessage(fullPrice));
