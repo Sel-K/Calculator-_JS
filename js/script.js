@@ -1,33 +1,56 @@
 'use strict';
 
-let title = prompt('Как называется ваш проект?'); //ранее указано 'Calculator_JS';
-let screens = prompt('Какие типы экранов нужно разработать?', 'Simple, Complex, Interactive');
-let screenPrice = +prompt('Сколько будет стоить данная работа?', '12000');
-let adaptiv = confirm('Нужен ли адаптив на сайте?');
-
+let title; 
+let screens;
+let screenPrice;
+let adaptiv;
 let rollback = 77;
 let allServicePrices;
 let fullPrice;
 let toIntermediary;//% отката посреднику
 let servicePercentPrice;
+let service1;
+let service2;
 
-// 7 пункт
-let service1 = +prompt('Какой дополнительный тип услуги нужен?');
-let servicePrice1 = +prompt('Сколько это будет стоить?');
-let service2 = +prompt('Какой дополнительный тип услуги нужен?');
-let servicePrice2 = +prompt('Сколько это будет стоить?');
+const isNumber = function(num) {
+    return num
+}
+
+const asking = function() {
+    title = prompt('Как называется ваш проект?', 'Калькулятов верстки');
+    screens = prompt('Какие типы экранов нужно разработать?', 'Simple, Complex, Interactive');
+
+    while(isNaN(screenPrice) || screenPrice.trim() === '' || screenPrice === null) {
+        screenPrice = prompt('Сколько будет стоить данная работа?');
+    }
+
+    adaptiv = confirm('Нужен ли адаптив на сайте?');
+}
 
 
 const showTypeOff = function (variable) {
     console.log(variable, typeof variable);
 }
-// к 4 уроку пункт 1
-const getAllServicePrices = function (a, b) {
-    return (a + b);
-}
 
+
+
+// к 4 уроку пункт 1
 function getFullPrice(a, b) {
     return a + b;
+}
+
+const getAllServicePrices = function () {
+    let sum = 0;
+
+    for (let i = 0; i < 2; i++) {
+        if (i === 0){
+            service1 = prompt('Какой дополнительный тип услуги нужен?', 'Отправка форм');
+        } else if (i === 1){
+            service2 = prompt('Какой дополнительный тип услуги нужен?', 'Карта');
+        }
+        sum += +prompt('Сколько это будет стоить?');
+    }
+    return sum;
 }
 
 function getServicePercentPrices(a, b) {
@@ -58,15 +81,17 @@ showTypeOff(title);
 showTypeOff(screenPrice);
 showTypeOff(adaptiv);
 
-allServicePrices = getAllServicePrices(servicePrice1, servicePrice2);
+asking();
+title = getTitle(title);
+allServicePrices = getAllServicePrices();
 fullPrice = getFullPrice(screenPrice, allServicePrices);
 servicePercentPrice = getServicePercentPrices(fullPrice, toIntermediary = fullPrice * (rollback / 100));
-title = getTitle(title);
+
 
 console.log(title = getTitle(title));
 console.log(screens.toLowerCase().split(' '));
  //toLowerCase - все буквы в нижнем регистре, .split - разбивает на массив строку
-console.log(allServicePrices);
+console.log("allServicePrices", allServicePrices);
 console.log(fullPrice);
 console.log(servicePercentPrice);
 console.log(getRollbackMessage(fullPrice));
