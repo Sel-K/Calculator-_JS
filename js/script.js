@@ -37,7 +37,6 @@ const asking = function () {
 }
 
 
-// к 4 уроку пункт 1
 function getFullPrice(a, b) {
     return a + b;
 }
@@ -71,7 +70,6 @@ function getTitle(title) {
     return title[0].toUpperCase() + title.slice(1).toLowerCase();
 }
 
-//10 пункт
 const getRollbackMessage = function (price) {
     if (price > 30000) {
         return 'Даем скидку в 10%';
@@ -97,9 +95,6 @@ showTypeOff(screenPrice);
 showTypeOff(adaptiv);
 
 console.log(title = getTitle(title));
-console.log(typeof title);
-console.log(typeof screenPrice);
-console.log(typeof adaptiv);
 
 console.log(screens.toLowerCase().split(' '));
 //toLowerCase - все буквы в нижнем регистре, .split - разбивает на массив строку
