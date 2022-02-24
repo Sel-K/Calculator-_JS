@@ -1,6 +1,6 @@
 'use strict';
 
-let title; 
+let title;
 let screens;
 let screenPrice;
 let adaptiv;
@@ -12,26 +12,29 @@ let servicePercentPrice;
 let service1;
 let service2;
 
-const isNumber = function(num) {
-    return !isNaN(parseFloat(num) && isFinite(num));
-}
-
-const asking = function() {
-    title = prompt('Как называется ваш проект?', 'Калькулятов верстки');
-    screens = prompt('Какие типы экранов нужно разработать?', 'Simple, Complex, Interactive');
-
-    while(!isNumber(screenPrice)) {
-        screenPrice = prompt('Сколько будет стоить данная работа?');
-    }
-
-    adaptiv = confirm('Нужен ли адаптив на сайте?');
-}
-
-
 const showTypeOff = function (variable) {
     console.log(variable, typeof variable);
 }
 
+const isNumber = function (num) {
+    return !isNaN(parseFloat(num) && isFinite(num));
+}
+
+const asking = function () {
+    title = prompt('Как называется ваш проект?', 'Калькулятов верстки');
+    screens = prompt('Какие типы экранов нужно разработать?', 'Simple, Complex, Interactive');
+
+    do {
+        screenPrice = +prompt('Сколько будет стоить данная работа?');
+    } while (!isNumber(screenPrice));
+
+    /*
+        while(!isNumber(screenPrice)) {
+            screenPrice = prompt('Сколько будет стоить данная работа?');
+        }*/
+
+    adaptiv = confirm('Нужен ли адаптив на сайте?');
+}
 
 
 // к 4 уроку пункт 1
@@ -43,12 +46,17 @@ const getAllServicePrices = function () {
     let sum = 0;
 
     for (let i = 0; i < 2; i++) {
-        if (i === 0){
+        let sum1 = 0;
+        if (i === 0) {
             service1 = prompt('Какой дополнительный тип услуги нужен?', 'Отправка форм');
-        } else if (i === 1){
+        } else if (i === 1) {
             service2 = prompt('Какой дополнительный тип услуги нужен?', 'Карта');
         }
-        sum += +prompt('Сколько это будет стоить?');
+        do {
+            sum1 = +prompt('Сколько это будет стоить?');
+        } while (!isNumber(sum1));
+
+        sum += +sum1;
     }
     return sum;
 }
@@ -58,9 +66,9 @@ function getServicePercentPrices(a, b) {
 }
 
 function getTitle(title) {
-    
-        title = title.trim();
-        return title[0].toUpperCase() + title.slice(1).toLowerCase();
+
+    title = title.trim();
+    return title[0].toUpperCase() + title.slice(1).toLowerCase();
 }
 
 //10 пункт
@@ -77,9 +85,6 @@ const getRollbackMessage = function (price) {
 }
 
 //Выводы в консоль и алерт
-showTypeOff(title);
-showTypeOff(screenPrice);
-showTypeOff(adaptiv);
 
 asking();
 title = getTitle(title);
@@ -87,12 +92,15 @@ allServicePrices = getAllServicePrices();
 fullPrice = getFullPrice(screenPrice, allServicePrices);
 servicePercentPrice = getServicePercentPrices(fullPrice, toIntermediary = fullPrice * (rollback / 100));
 
+showTypeOff(title);
+showTypeOff(screenPrice);
+showTypeOff(adaptiv);
 
 console.log(title = getTitle(title));
 console.log(screens.toLowerCase().split(' '));
- //toLowerCase - все буквы в нижнем регистре, .split - разбивает на массив строку
-console.log("allServicePrices", allServicePrices);
-console.log(fullPrice);
-console.log(servicePercentPrice);
+//toLowerCase - все буквы в нижнем регистре, .split - разбивает на массив строку
+console.log('allServicePrices', allServicePrices);
+console.log('fullPrice', fullPrice);
+console.log('servicePercentPrice', servicePercentPrice);
 console.log(getRollbackMessage(fullPrice));
 console.log(toIntermediary);
