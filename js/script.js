@@ -97,6 +97,10 @@ showTypeOff(screenPrice);
 showTypeOff(adaptiv);
 
 console.log(title = getTitle(title));
+console.log(typeof title);
+console.log(typeof screenPrice);
+console.log(typeof adaptiv);
+
 console.log(screens.toLowerCase().split(' '));
 //toLowerCase - все буквы в нижнем регистре, .split - разбивает на массив строку
 console.log('allServicePrices', allServicePrices);
