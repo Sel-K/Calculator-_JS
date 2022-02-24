@@ -11,7 +11,6 @@ let fullPrice;
 let toIntermediary;//% отката посреднику
 let servicePercentPrice;
 
-
 // 7 пункт
 let service1 = +prompt('Какой дополнительный тип услуги нужен?');
 let servicePrice1 = +prompt('Сколько это будет стоить?');
@@ -65,7 +64,8 @@ servicePercentPrice = getServicePercentPrices(fullPrice, toIntermediary = fullPr
 title = getTitle(title);
 
 console.log(title = getTitle(title));
-console.log(screens.toLowerCase().split(' ')); //toLowerCase - все буквы в нижнем регистре, .split - разбивает на массив строку//
+console.log(screens.toLowerCase().split(' '));
+ //toLowerCase - все буквы в нижнем регистре, .split - разбивает на массив строку
 console.log(allServicePrices);
 console.log(fullPrice);
 console.log(servicePercentPrice);
